@@ -1,0 +1,13 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.autoComplete.extraPaths": [
+        "./finbert"
+    ],
+    "python.analysis.include": [
+        "{workspaceFolder}/finbert"
+    ],
+    "python.analysis.extraPaths": [
+        "{workspaceFolder}/finbert"
+    ]
+}

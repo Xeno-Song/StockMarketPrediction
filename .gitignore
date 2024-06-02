@@ -161,3 +161,4 @@ cython_debug/
 
 finbert_model*
 output
+tmp
