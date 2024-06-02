@@ -5,6 +5,14 @@ import signal
 from dateutil.parser import parser
 
 
+class ArticleIndex():
+    def __init__(self):
+        self.url = ''
+        self.title = ''
+        self.publish_date = datetime.datetime.now()
+        self.text = ''
+
+
 class YahooNewsCrawler():
     def __init__(self, search: str, site: str, start_date, end_date, index = 0):
         self.interface = GNews(language='en', country='US', start_date=start_date, end_date=end_date)
@@ -30,10 +38,12 @@ class YahooNewsCrawler():
         for news_index in self.found_news:
             # print(f"[{self.thread_index}] Reading article.. [{news_index['title']}]")
             article = self.interface.get_full_article(news_index['url'])
-            article.title = news_index['title']
-            article.url = news_index['url']
-            article.publish_date = parser().parse(news_index['published date'])
-            self.articles.append(article)
+            article_index = ArticleIndex()
+            article_index.title = news_index['title']
+            article_index.url = news_index['url']
+            article_index.publish_date = parser().parse(news_index['published date'])
+            article_index.text = article.text
+            self.articles.append(article_index)
 
         self.is_end = True
         
